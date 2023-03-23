@@ -15,6 +15,10 @@ begin
              select 'Recharge_Device' table_name from dual union all
              select 'Transaction' table_name from dual union all
              select 'Transaction_Device' table_name from dual
+             select 'Line' table_name from dual union all
+             select 'Station' table_name from dual union all
+             select 'Operations' table_name from dual union all
+             select 'Line-station connections' table_name from dual union all
    )
    loop
    dbms_output.put_line('....Dropping table '||i.table_name);
