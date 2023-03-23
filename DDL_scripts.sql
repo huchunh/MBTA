@@ -1,3 +1,4 @@
+--CLEAN UP SCRIPT
 set serveroutput on
 declare
     v_table_exists varchar(1) := 'Y';
