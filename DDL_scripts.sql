@@ -18,7 +18,7 @@ begin
              select 'Line' table_name from dual union all
              select 'Station' table_name from dual union all
              select 'Operations' table_name from dual union all
-             select 'Line-station connections' table_name from dual union all
+             select 'Line_station_connections' table_name from dual union all
    )
    loop
    dbms_output.put_line('....Dropping table '||i.table_name);
@@ -58,3 +58,4 @@ create table Transaction(transaction_id number(10) constraint transaction_id pri
 CREATE TABLE LINE (line_id number(10) constraint line_id primary key, FOREIGN KEY (transit_id) REFERENCES Transit(transit_id), name varchar (30), start_date datetime);
 CREATE TABLE STATION (station_id number(10) constraint station_id primary key, name varchar (30), contruction_date datetime);
 CREATE TABLE OPERATIONS (operation_id number(10) constraint operation_id primary key, start_time datetime, end_time datetime, reason varchar(50), log_timestamp timestamp, FOREIGN KEY (transit_id) REFERENCES Transit(transit_id),FOREIGN KEY (line_id) REFERENCES Line(line_id), FOREIGN KEY (station_id) REFERENCES STATION(station_id), FOREIGN KEY (recharge_device_id) REFERENCES REACHARGE_DEVICE(Recharge_Device_id), FOREIGN KEY (transaction_device_id) REFERENCES Transaction_device(transaction_device_id) );
+CREATE TABLE LINE_STATION_CONNECTIONS (connection_id number(10) constraint connection_id primary key, FOREIGN KEY (line_id) REFERENCES Line(Line_id), FOREIGN KEY (station_id) REFERENCES Station(Station_id) );
