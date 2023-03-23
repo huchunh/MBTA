@@ -2,7 +2,7 @@
 
 Final Project for Database Mangement and Database Design - INFO6210
 
-# TEAM INFORMATION
+###TEAM INFORMATION
 
 |Name|Email
 |------|------|
